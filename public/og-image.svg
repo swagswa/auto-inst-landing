@@ -1,0 +1,60 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Logo/Icon -->
+  <g transform="translate(100, 150)">
+    <circle cx="50" cy="50" r="40" fill="url(#textGradient)" opacity="0.2"/>
+    <circle cx="50" cy="50" r="30" fill="none" stroke="url(#textGradient)" stroke-width="3"/>
+    <path d="M35 50 L45 60 L65 40" stroke="url(#textGradient)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Main Title -->
+  <text x="250" y="220" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="url(#textGradient)">
+    AutoContent Factory
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="250" y="280" font-family="Arial, sans-serif" font-size="32" fill="#94a3b8">
+    AI-Powered Video Automation Platform
+  </text>
+  
+  <!-- Description -->
+  <text x="250" y="340" font-family="Arial, sans-serif" font-size="24" fill="#64748b">
+    Build a 24/7 content factory with AI that researches,
+  </text>
+  <text x="250" y="380" font-family="Arial, sans-serif" font-size="24" fill="#64748b">
+    edits, and posts videos across 200+ accounts automatically
+  </text>
+  
+  <!-- Features -->
+  <g transform="translate(250, 450)">
+    <circle cx="10" cy="10" r="4" fill="#60a5fa"/>
+    <text x="25" y="16" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0">100% Automation</text>
+    
+    <circle cx="200" cy="10" r="4" fill="#a855f7"/>
+    <text x="215" y="16" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0">Zero Manual Labor</text>
+    
+    <circle cx="400" cy="10" r="4" fill="#ec4899"/>
+    <text x="415" y="16" font-family="Arial, sans-serif" font-size="18" fill="#e2e8f0">Industrial Scale</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="1000" cy="100" r="60" fill="url(#textGradient)" opacity="0.1"/>
+  <circle cx="1100" cy="500" r="40" fill="url(#textGradient)" opacity="0.1"/>
+  <circle cx="950" cy="400" r="30" fill="url(#textGradient)" opacity="0.1"/>
+</svg>
