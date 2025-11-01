@@ -5,22 +5,23 @@ import Features from "@/components/Features";
 import Showcase from "@/components/Showcase";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
-import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import GlobalShaderBackground from "@/components/ui/global-shader-background";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <HowItWorks />
-      <Features />
-      <Showcase />
-      <Pricing />
-      <Testimonials />
-      <FinalCTA />
-      <Footer />
-    </div>
+    <GlobalShaderBackground>
+      <div className="min-h-screen overflow-x-hidden w-full">
+        <Header />
+        <Hero />
+        <HowItWorks />
+        <Features />
+        <Showcase />
+        <Pricing />
+        <Testimonials />
+        <Footer />
+      </div>
+    </GlobalShaderBackground>
   );
 };
 

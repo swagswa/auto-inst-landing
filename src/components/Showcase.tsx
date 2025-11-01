@@ -4,19 +4,7 @@ import shape2 from "@/assets/shape-2.png";
 
 const Showcase = () => {
   return (
-    <section className="py-32 relative overflow-hidden">
-      {/* Floating shapes */}
-      <img 
-        src={shape1} 
-        alt="" 
-        className="absolute left-0 top-1/4 w-64 h-64 opacity-30 animate-float"
-      />
-      <img 
-        src={shape2} 
-        alt="" 
-        className="absolute right-0 bottom-1/4 w-80 h-80 opacity-30 animate-float [animation-delay:2s]"
-      />
-
+    <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

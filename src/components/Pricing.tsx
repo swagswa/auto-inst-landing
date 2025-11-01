@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const plans = [
   {
@@ -60,30 +61,37 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.05, rootMargin: '0px' });
+
   return (
-    <section id="pricing" className="py-32 relative">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
-          <span className="text-sm text-primary font-semibold tracking-wider uppercase mb-4 block">
+    <section id="pricing" ref={ref as any} className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-20 2xl:py-24 relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <span className="text-xs sm:text-sm text-primary font-semibold tracking-wider uppercase mb-3 sm:mb-4 block">
             Pricing
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 px-4">
             Simple pricing that scales
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             The more videos you automate, the cheaper each one gets.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative p-8 ${
+              className={`relative p-6 sm:p-8 transition-all duration-500 hover:scale-105 ${
                 plan.popular
-                  ? "border-primary shadow-2xl shadow-primary/20 scale-105"
-                  : "border-border"
+                  ? "border-primary shadow-2xl shadow-primary/20 md:scale-105"
+                  : "border-border hover:shadow-xl hover:shadow-primary/10"
+              } ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-accent to-primary rounded-full text-sm font-semibold">
@@ -121,7 +129,9 @@ const Pricing = () => {
           ))}
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-12 max-w-2xl mx-auto">
+        <p className={`text-center text-xs sm:text-sm text-muted-foreground mt-8 sm:mt-12 max-w-2xl mx-auto px-4 transition-all duration-1000 delay-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           💡 The system rewards scale — the more videos you generate, the cheaper each becomes.
         </p>
       </div>

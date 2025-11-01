@@ -49,6 +49,13 @@ All colors MUST be HSL.
     /* Glass effect */
     --glass-bg: hsl(260 30% 15% / 0.3);
     --glass-border: hsl(260 30% 40% / 0.2);
+
+    /* Rainbow button colors - based on primary (265 85% 65%) and accent (240 100% 70%) */
+    --color-1: 265 85% 65%;
+    --color-2: 250 90% 68%;
+    --color-3: 240 100% 70%;
+    --color-4: 230 95% 72%;
+    --color-5: 275 80% 63%;
   }
 }
 
@@ -57,7 +64,65 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-reverse {
+    @apply bg-gradient-to-r from-purple-300 via-blue-300 to-white bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px rgba(186, 104, 240, 0.3), 0 0 80px rgba(186, 104, 240, 0.15);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px rgba(102, 102, 255, 0.3), 0 0 80px rgba(102, 102, 255, 0.15);
+  }
+
+  .perspective-\[1000px\] {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
